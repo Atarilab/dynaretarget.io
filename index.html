@@ -1,385 +1,47 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="Dynamic Retargeting for Humanoid Robots using Sampling-Based Trajectory Optimization.">
-  <meta name="keywords" content="Dynamic Retargeting, Humanoid Robots, Sampling-Based Trajectory Optimization, dynaretarget">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DynaRetarget: Dynamically-Feasible Retargeting using Sampling-Based Trajectory Optimization</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/static/images/Logo_of_the_Technical_University_of_Munich.svg.png" />
+    <meta name="description"
+          content="Dynamic Retargeting for Humanoid Robots using Sampling-Based Trajectory Optimization.">
+    <meta name="keywords" content="Dynamic Retargeting, Humanoid Robots, Sampling-Based Trajectory Optimization, dynaretarget">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DynaRetarget: Dynamically-Feasible Retargeting using Sampling-Based Trajectory Optimization</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
-    gtag('js', new Date());
+      gtag('js', new Date());
 
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
+      gtag('config', 'G-PYVRSFMDRL');
+    </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/Logo_of_the_Technical_University_of_Munich.svg.png">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-</head>
-<body>
-
-<section class="hero hero-with-video-bg">
-  <video class="hero-video-bg" autoplay muted loop playsinline>
-    <source src="./static/videos/video_submission/real_world_experiments/exp3.mp4" type="video/mp4">
-  </video>
-  <div class="hero-video-overlay"></div>
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title publication-title has-text-centered">
-            <span class="publication-title-main">DynaRetarget</span><br>
-            <span class="publication-title-sub"><span style="white-space: nowrap">Dynamically-Feasible Retargeting using</span><br><span style="white-space: nowrap">Sampling-Based Trajectory Optimization</span></span>
-          </h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://www.ce.cit.tum.de/en/aipd/members/victor-dhedin/" target="_blank" rel="noopener noreferrer">Victor Dhédin*</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/ilyass-taouil-8b2b15a7/?locale=en" target="_blank" rel="noopener noreferrer">Ilyass Taouil*</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://shafeef901.github.io/" target="_blank" rel="noopener noreferrer">Shafeef Omar*</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/dian-yu-51b6652ab" target="_blank" rel="noopener noreferrer">Dian Yu</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/kun-tao-15b91b237/?locale=de" target="_blank" rel="noopener noreferrer">Kun Tao</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.3dunderstanding.org/team.html" target="_blank" rel="noopener noreferrer">Angela Dai</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.ce.cit.tum.de/en/aipd/home/" target="_blank" rel="noopener noreferrer">Majid Khadiv</a><sup>1</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Munich Institute of Robotics and Machine Intelligence
-              (MIRMI), Technical University of Munich (TUM), Germany.</span>
-          </div>
-
-          <div class="publication-footnote">* Equal contribution</div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2602.06827"
-                   class="external-link button is-normal is-rounded is-dark"
-                   target="_blank" rel="noopener noreferrer">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=YlopoVulwi8"
-                   class="external-link button is-normal is-rounded is-dark"
-                   target="_blank" rel="noopener noreferrer">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-          In this work, we introduce <strong>DynaRetarget</strong>, a complete pipeline for retargeting human motions to humanoid control policies.
-          </p>
-          <p>
-          The core component of <strong>DynaRetarget</strong> is a novel Sampling-Based Trajectory Optimization (SBTO) framework that refines imperfect kinematic trajectories into dynamically feasible motions. SBTO incrementally advances the optimization horizon, enabling optimization over the entire trajectory for long-horizon tasks.
-          </p>
-          <p>
-          We validate <strong>DynaRetarget</strong> by successfully retargeting hundreds of humanoid-object demonstrations and achieving higher success rates than the state of the art. The framework also generalizes across varying object properties, such as mass, size, and geometry, using the same tracking objective.
-          This ability to robustly retarget diverse demonstrations opens the door to generating large-scale synthetic datasets of humanoid loco-manipulation trajectories, addressing a major bottleneck in real-world data collection.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section section-videos-wide">
-  <div class="container container-videos-wide">
-    <h2 class="title is-2 has-text-centered section-main-title">DynaRetarget Refines Imperfect Demonstrations</h2>
-    <div class="columns is-centered">
-      <!-- Video 1. -->
-      <div class="column is-one-third">
-        <h2 class="title is-4 has-text-centered">Imperfect Demonstration</h2>
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/analysis/missing_cut.webm" type="video/webm">
-          </video>
-        </div>
-      </div>
-      <!-- Video 2. -->
-      <div class="column is-one-third">
-        <h2 class="title is-4 has-text-centered">Refined Trajectory</h2>
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/analysis/refined_cut.webm" type="video/webm">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-videos-wide">
-  <div class="container container-videos-wide">
-    <h2 class="title is-2 has-text-centered section-main-title">DynaRetarget Uses the Same Cost for Different Motions</h2>
-    <!-- Row 1 -->
-    <div class="columns is-centered">
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub3_largebox_001_original_submission.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub3_largebox_005_original_submission.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub7_largebox_001_original_submission.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-    <!-- Row 2 -->
-    <div class="columns is-centered">
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub8_largebox_031_original_submission.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub8_largebox_032_original_submission.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub10_largebox_085_original_submission.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-    <!-- Row 3 -->
-    <div class="columns is-centered">
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub10_largebox_086_original_submission.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub16_largebox_001_original_submission.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub16_largebox_004_original_submission.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-videos-wide">
-  <div class="container container-videos-wide">
-    <h2 class="title is-2 has-text-centered section-main-title">DynaRetarget Augments the Same Demonstration for Different Objects</h2>
-    <div class="columns is-centered">
-      <!-- Video 1. -->
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/augmentation/sub10_largebox_084_original_chair.mp4" type="video/webm">
-          </video>
-        </div>
-      </div>
-      <!-- Video 2. -->
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/augmentation/sub10_largebox_084_original_cylinder.mp4" type="video/webm">
-          </video>
-        </div>
-      </div>
-      <!-- Video 3. -->
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/augmentation/sub10_largebox_084_original_shelf.mp4" type="video/webm">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-videos-wide">
-  <div class="container container-videos-wide">
-    <h2 class="title is-2 has-text-centered section-main-title">DynaRetarget Enables Seamless RL Transfer with One Reward</h2>
-    <div class="columns is-centered">
-      <!-- Row 1 -->
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/real_world_experiments/exp1.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/real_world_experiments/exp2.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/real_world_experiments/exp3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-    <div class="columns is-centered">
-      <!-- Row 2 -->
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/real_world_experiments/exp4.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/real_world_experiments/exp5.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/real_world_experiments/exp6.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-    <div class="columns is-centered">
-      <!-- Row 3 -->
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/real_world_experiments/exp7.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/real_world_experiments/exp8.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="publication-video">
-          <video controls playsinline autoplay muted loop>
-            <source src="./static/videos/video_submission/real_world_experiments/exp9.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
-  </div>
-</section> -->
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8 has-text-centered">
-        <div class="content">
-          <p>
-            Page template borrowed from <a href="https://nerfies.github.io/" target="_blank" rel="noopener noreferrer">Nerfies</a>.
-          </p>
-      </div>
-    </div>
-  </div>
-</footer>
-
-</body>
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </body>
 </html>
