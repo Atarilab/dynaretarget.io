@@ -27,10 +27,8 @@ function App() {
                         colors={{ first: "#9E7AFF", second: "#FE8BBB" }}
                       />
                     </span>
-                    <br />
                     <span className="publication-title-sub">
                       <span className="title-line-1">Dynamically-Feasible Retargeting using</span>
-                      <br />
                       <span className="title-line-2">Sampling-Based Trajectory Optimization</span>
                     </span>
                   </h1>
@@ -68,7 +66,7 @@ function App() {
                   </span>
                 </div>
 
-                  <div className="is-size-5 publication-authors">
+                  <div className="is-size-6 publication-authors">
                     <span className="author-block">
                       <sup>1</sup>Munich Institute of Robotics and Machine Intelligence
                       (MIRMI), Technical University of Munich (TUM), Germany.

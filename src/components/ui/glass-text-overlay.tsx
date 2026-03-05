@@ -38,8 +38,8 @@ export function GlassTextOverlay({
     <div
       className={cn("relative block w-full max-w-full box-border", className)}
       style={{
-        backdropFilter: blur ? "blur(1 px) saturate(20%)" : "none",
-        WebkitBackdropFilter: blur ? "blur(4px) saturate(120%)" : "none",
+        backdropFilter: blur ? "blur(1.5px) saturate(120%)" : "none",
+        WebkitBackdropFilter: blur ? "blur(1.5px) saturate(120%)" : "none",
         backgroundColor: backgroundColor,
         borderRadius: borderRadius,
         padding: "clamp(1rem, 4vw, 1.5rem) clamp(1rem, 5vw, 2rem)",
