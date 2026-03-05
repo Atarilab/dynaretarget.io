@@ -15,7 +15,7 @@ function App() {
               <div className="column has-text-centered">
                 <GlassTextOverlay
                   className="mb-8 mx-auto"
-                  backgroundColor="rgba(0, 0, 0, 0.25)"
+                  backgroundColor="rgba(0, 0, 0, 0.0)"
                   borderRadius="8px"
                 >
                   <h1 className="title publication-title has-text-centered">
@@ -41,7 +41,7 @@ function App() {
               <div className="column has-text-centered">
                 <GlassTextOverlay
                   className="mx-auto"
-                  backgroundColor="rgba(0, 0, 0, 0.2)"
+                  backgroundColor="rgba(0, 0, 0, 0.0)"
                   borderRadius="8px"
                 >
                   <div className="is-size-5 publication-authors">
@@ -123,13 +123,13 @@ function App() {
               <h2 className="title is-3">Abstract</h2>
               <div className="content has-text-justified">
                 <p>
-                  In this work, we introduce <strong><SparklesText text="DynaRetarget" className="inline-block text-base" sparklesCount={8} colors={{ first: "#9E7AFF", second: "#FE8BBB" }} /></strong>, a complete pipeline for retargeting human motions to humanoid control policies.
+                  In this work, we introduce <strong>DynaRetarget</strong>, a complete pipeline for retargeting human motions to humanoid control policies.
                 </p>
                 <p>
-                  The core component of <strong><SparklesText text="DynaRetarget" className="inline-block text-base" sparklesCount={8} colors={{ first: "#9E7AFF", second: "#FE8BBB" }} /></strong> is a novel Sampling-Based Trajectory Optimization (SBTO) framework that refines imperfect kinematic trajectories into dynamically feasible motions. SBTO incrementally advances the optimization horizon, enabling optimization over the entire trajectory for long-horizon tasks.
+                  The core component of <strong>DynaRetarget</strong> is a novel Sampling-Based Trajectory Optimization (SBTO) framework that refines imperfect kinematic trajectories into dynamically feasible motions. SBTO incrementally advances the optimization horizon, enabling optimization over the entire trajectory for long-horizon tasks.
                 </p>
                 <p>
-                  We validate <strong><SparklesText text="DynaRetarget" className="inline-block text-base" sparklesCount={8} colors={{ first: "#9E7AFF", second: "#FE8BBB" }} /></strong> by successfully retargeting hundreds of humanoid-object demonstrations and achieving higher success rates than the state of the art. The framework also generalizes across varying object properties, such as mass, size, and geometry, using the same tracking objective.
+                  We validate <strong>DynaRetarget</strong> by successfully retargeting hundreds of humanoid-object demonstrations and achieving higher success rates than the state of the art. The framework also generalizes across varying object properties, such as mass, size, and geometry, using the same tracking objective.
                   This ability to robustly retarget diverse demonstrations opens the door to generating large-scale synthetic datasets of humanoid loco-manipulation trajectories, addressing a major bottleneck in real-world data collection.
                 </p>
               </div>
