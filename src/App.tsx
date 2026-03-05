@@ -10,11 +10,11 @@ function App() {
         </video>
         <div className="hero-video-overlay"></div>
         <div className="hero-body">
-          <div className="container is-max-desktop">
+          <div className="container is-max-desktop hero-body-container">
             <div className="columns is-centered">
               <div className="column has-text-centered">
                 <GlassTextOverlay
-                  className="mb-8"
+                  className="mb-8 mx-auto"
                   backgroundColor="rgba(0, 0, 0, 0.25)"
                   borderRadius="8px"
                 >
@@ -22,20 +22,25 @@ function App() {
                     <span className="publication-title-main">
                       <SparklesText 
                         text="DynaRetarget" 
-                        className="text-white text-6xl"
+                        className="text-white"
                         sparklesCount={15}
                         colors={{ first: "#9E7AFF", second: "#FE8BBB" }}
                       />
                     </span>
                     <br />
                     <span className="publication-title-sub">
-                      <span style={{ whiteSpace: "nowrap" }}>Dynamically-Feasible Retargeting using</span>
+                      <span className="title-line-1">Dynamically-Feasible Retargeting using</span>
                       <br />
-                      <span style={{ whiteSpace: "nowrap" }}>Sampling-Based Trajectory Optimization</span>
+                      <span className="title-line-2">Sampling-Based Trajectory Optimization</span>
                     </span>
                   </h1>
                 </GlassTextOverlay>
+              </div>
+            </div>
+            <div className="columns is-centered hero-bottom-content">
+              <div className="column has-text-centered">
                 <GlassTextOverlay
+                  className="mx-auto"
                   backgroundColor="rgba(0, 0, 0, 0.2)"
                   borderRadius="8px"
                 >
@@ -73,7 +78,7 @@ function App() {
                   <div className="publication-footnote">* Equal contribution</div>
                 </GlassTextOverlay>
 
-                <div className="column has-text-centered mt-6">
+                <div className="has-text-centered mt-6">
                   <div className="publication-links">
                     {/* PDF Link. */}
                     <span className="link-block">

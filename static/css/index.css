@@ -62,6 +62,36 @@ footer.footer .icon-link {
   align-items: flex-start;
   justify-content: center;
   padding-top: 8vh;
+  padding-bottom: 8vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.hero-with-video-bg .hero-body .container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.hero-with-video-bg .hero-body-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 16vh);
+}
+
+.hero-with-video-bg .hero-bottom-content {
+  margin-top: auto;
+  padding-bottom: 0;
+}
+
+.hero-with-video-bg .hero-body .column {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero-with-video-bg .publication-title,
@@ -140,15 +170,47 @@ footer.footer .icon-link {
     font-family: 'Google Sans', sans-serif;
 }
 
+.hero-with-video-bg .publication-title {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.2;
+}
+
 .hero-with-video-bg .publication-title-main {
-  font-size: 7rem;
+  font-size: clamp(2.5rem, 8vw, 7rem);
   display: block;
+  line-height: 1.1;
+  margin-bottom: 0;
+  padding-bottom: 0.3em;
 }
 
 .hero-with-video-bg .publication-title-sub {
-  font-size: 4rem;
+  font-size: clamp(1.25rem, 4vw, 4rem);
   font-weight: 400;
   display: block;
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+.hero-with-video-bg .publication-title-sub .title-line-1,
+.hero-with-video-bg .publication-title-sub .title-line-2 {
+  white-space: nowrap;
+  display: inline;
+  line-height: inherit;
+}
+
+.hero-with-video-bg .publication-title-sub .title-line-1 {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero-with-video-bg .publication-title-sub .title-line-1,
+  .hero-with-video-bg .publication-title-sub .title-line-2 {
+    white-space: normal;
+    display: block;
+  }
 }
 
 .publication-authors {
@@ -259,18 +321,33 @@ footer.footer .icon-link {
   border-radius: 5px;
 }
 
-/* Hero section: scale down on mobile only, unchanged on PC. No transform to avoid affecting videos. */
-@media screen and (max-width: 768px) {
-  .hero-with-video-bg .hero-body {
-    padding-top: 4vh;
-  }
-
+/* Hero section: responsive breakpoints for better visibility */
+@media screen and (max-width: 1024px) {
   .hero-with-video-bg .publication-title-main {
-    font-size: 3rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
   }
 
   .hero-with-video-bg .publication-title-sub {
-    font-size: 1.75rem;
+    font-size: clamp(1.25rem, 3vw, 3rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-with-video-bg .hero-body {
+    padding-top: 4vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-with-video-bg .publication-title-main {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 0;
+  }
+
+  .hero-with-video-bg .publication-title-sub {
+    font-size: clamp(1rem, 4vw, 1.75rem);
+    line-height: 1.25;
   }
 
   .hero-with-video-bg .publication-title + .publication-authors {
@@ -279,5 +356,33 @@ footer.footer .icon-link {
 
   .hero-with-video-bg .publication-authors {
     font-size: 0.9rem;
+  }
+
+  .hero-with-video-bg .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-with-video-bg .hero-body {
+    padding-top: 2vh;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .hero-with-video-bg .publication-title-main {
+    font-size: clamp(1.75rem, 10vw, 2.5rem);
+    line-height: 1.1;
+    margin-bottom: 0;
+  }
+
+  .hero-with-video-bg .publication-title-sub {
+    font-size: clamp(0.9rem, 5vw, 1.5rem);
+    line-height: 1.25;
+  }
+
+  .hero-with-video-bg .publication-authors {
+    font-size: 0.8rem;
   }
 }

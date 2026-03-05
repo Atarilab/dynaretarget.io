@@ -36,15 +36,16 @@ export function GlassTextOverlay({
 }: GlassTextOverlayProps) {
   return (
     <div
-      className={cn("relative inline-block", className)}
+      className={cn("relative block w-full max-w-full box-border", className)}
       style={{
         backdropFilter: blur ? "blur(1 px) saturate(20%)" : "none",
         WebkitBackdropFilter: blur ? "blur(4px) saturate(120%)" : "none",
         backgroundColor: backgroundColor,
         borderRadius: borderRadius,
-        padding: "1.5rem 2rem",
+        padding: "clamp(1rem, 4vw, 1.5rem) clamp(1rem, 5vw, 2rem)",
         boxShadow: "0 4px 16px 0 rgba(0, 0, 0, 0.2)",
         border: "1px solid rgba(255, 255, 255, 0.1)",
+        overflow: "hidden",
       }}
     >
       <div
