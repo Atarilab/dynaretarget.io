@@ -8,7 +8,7 @@ interface LazyVideoProps {
   loop?: boolean;
 }
 
-export function LazyVideo({ src, type = "video/mp4", className, controls = true, loop = true }: LazyVideoProps) {
+export function LazyVideo({ src, className, controls = true, loop = true }: LazyVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
