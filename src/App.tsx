@@ -1,11 +1,11 @@
-import { SparklesText } from "@/components/ui/sparkles-text";
 import { GlassTextOverlay } from "@/components/ui/glass-text-overlay";
+import { LazyVideo } from "@/components/ui/lazy-video";
 
 function App() {
   return (
     <>
       <section className="hero hero-with-video-bg">
-        <video className="hero-video-bg" autoPlay muted loop playsInline>
+        <video className="hero-video-bg" autoPlay muted loop playsInline preload="auto">
           <source src="./static/videos/video_submission/real_world_experiments/exp3.mp4" type="video/mp4" />
         </video>
         <div className="hero-video-overlay"></div>
@@ -20,12 +20,7 @@ function App() {
                 >
                   <h1 className="title publication-title has-text-centered">
                     <span className="publication-title-main">
-                      <SparklesText 
-                        text="DynaRetarget" 
-                        className="text-white"
-                        sparklesCount={15}
-                        colors={{ first: "#9E7AFF", second: "#FE8BBB" }}
-                      />
+                      <span className="title-dyna"></span><span className="title-retarget">DynaRetarget</span>
                     </span>
                     <span className="publication-title-sub">
                       <span className="title-line-1">Dynamically-Feasible Retargeting using</span>
@@ -139,25 +134,21 @@ function App() {
       <section className="section section-videos-wide">
         <div className="container container-videos-wide">
           <h2 className="title is-2 has-text-centered section-main-title">
-            <SparklesText text="DynaRetarget" className="text-4xl" sparklesCount={10} colors={{ first: "#9E7AFF", second: "#FE8BBB" }} /> Refines Imperfect Demonstrations
+            DynaRetarget Refines Imperfect Demonstrations
           </h2>
           <div className="columns is-centered">
             {/* Video 1. */}
             <div className="column is-one-third">
               <h2 className="title is-4 has-text-centered">Imperfect Demonstration</h2>
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/analysis/missing_cut.webm" type="video/webm" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/analysis/missing_cut.webm" type="video/webm" />
               </div>
             </div>
             {/* Video 2. */}
             <div className="column is-one-third">
               <h2 className="title is-4 has-text-centered">Refined Trajectory</h2>
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/analysis/refined_cut.webm" type="video/webm" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/analysis/refined_cut.webm" type="video/webm" />
               </div>
             </div>
           </div>
@@ -167,29 +158,23 @@ function App() {
       <section className="section section-videos-wide">
         <div className="container container-videos-wide">
           <h2 className="title is-2 has-text-centered section-main-title">
-            <SparklesText text="DynaRetarget" className="text-4xl" sparklesCount={10} colors={{ first: "#9E7AFF", second: "#FE8BBB" }} /> Uses the Same Cost for Different Motions
+            DynaRetarget Uses the Same Cost for Different Motions
           </h2>
           {/* Row 1 */}
           <div className="columns is-centered">
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub3_largebox_001_original_submission.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/many_motions/OmniRetarget_sub3_largebox_001_original_submission.mp4" />
               </div>
             </div>
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub3_largebox_005_original_submission.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/many_motions/OmniRetarget_sub3_largebox_005_original_submission.mp4" />
               </div>
             </div>
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub7_largebox_001_original_submission.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/many_motions/OmniRetarget_sub7_largebox_001_original_submission.mp4" />
               </div>
             </div>
           </div>
@@ -197,23 +182,17 @@ function App() {
           <div className="columns is-centered">
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub8_largebox_031_original_submission.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/many_motions/OmniRetarget_sub8_largebox_031_original_submission.mp4" />
               </div>
             </div>
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub8_largebox_032_original_submission.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/many_motions/OmniRetarget_sub8_largebox_032_original_submission.mp4" />
               </div>
             </div>
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub10_largebox_085_original_submission.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/many_motions/OmniRetarget_sub10_largebox_085_original_submission.mp4" />
               </div>
             </div>
           </div>
@@ -221,23 +200,17 @@ function App() {
           <div className="columns is-centered">
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub10_largebox_086_original_submission.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/many_motions/OmniRetarget_sub10_largebox_086_original_submission.mp4" />
               </div>
             </div>
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub16_largebox_001_original_submission.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/many_motions/OmniRetarget_sub16_largebox_001_original_submission.mp4" />
               </div>
             </div>
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/many_motions/OmniRetarget_sub16_largebox_004_original_submission.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/many_motions/OmniRetarget_sub16_largebox_004_original_submission.mp4" />
               </div>
             </div>
           </div>
@@ -247,31 +220,25 @@ function App() {
       <section className="section section-videos-wide">
         <div className="container container-videos-wide">
           <h2 className="title is-2 has-text-centered section-main-title">
-            <SparklesText text="DynaRetarget" className="text-4xl" sparklesCount={10} colors={{ first: "#9E7AFF", second: "#FE8BBB" }} /> Augments the Same Demonstration for Different Objects
+            DynaRetarget Augments the Same Demonstration for Different Objects
           </h2>
           <div className="columns is-centered">
             {/* Video 1. */}
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/augmentation/sub10_largebox_084_original_chair.mp4" type="video/webm" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/augmentation/sub10_largebox_084_original_chair.mp4" />
               </div>
             </div>
             {/* Video 2. */}
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/augmentation/sub10_largebox_084_original_cylinder.mp4" type="video/webm" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/augmentation/sub10_largebox_084_original_cylinder.mp4" />
               </div>
             </div>
             {/* Video 3. */}
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/augmentation/sub10_largebox_084_original_shelf.mp4" type="video/webm" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/augmentation/sub10_largebox_084_original_shelf.mp4" />
               </div>
             </div>
           </div>
@@ -281,29 +248,23 @@ function App() {
       <section className="section section-videos-wide">
         <div className="container container-videos-wide">
           <h2 className="title is-2 has-text-centered section-main-title">
-            <SparklesText text="DynaRetarget" className="text-4xl" sparklesCount={10} colors={{ first: "#9E7AFF", second: "#FE8BBB" }} /> Enables Seamless RL Transfer with One Reward
+            DynaRetarget Enables Seamless RL Transfer with One Reward
           </h2>
           <div className="columns is-centered">
             {/* Row 1 */}
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/real_world_experiments/exp1.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/real_world_experiments/exp1.mp4" />
               </div>
             </div>
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/real_world_experiments/exp2.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/real_world_experiments/exp2.mp4" />
               </div>
             </div>
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/real_world_experiments/exp3.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/real_world_experiments/exp3.mp4" />
               </div>
             </div>
           </div>
@@ -311,23 +272,17 @@ function App() {
             {/* Row 2 */}
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/real_world_experiments/exp4.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/real_world_experiments/exp4.mp4" />
               </div>
             </div>
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/real_world_experiments/exp5.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/real_world_experiments/exp5.mp4" />
               </div>
             </div>
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/real_world_experiments/exp6.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/real_world_experiments/exp6.mp4" />
               </div>
             </div>
           </div>
@@ -335,23 +290,17 @@ function App() {
             {/* Row 3 */}
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/real_world_experiments/exp7.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/real_world_experiments/exp7.mp4" />
               </div>
             </div>
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/real_world_experiments/exp8.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/real_world_experiments/exp8.mp4" />
               </div>
             </div>
             <div className="column is-one-third">
               <div className="publication-video">
-                <video controls playsInline autoPlay muted loop>
-                  <source src="./static/videos/video_submission/real_world_experiments/exp9.mp4" type="video/mp4" />
-                </video>
+                <LazyVideo src="./static/videos/video_submission/real_world_experiments/exp9.mp4" />
               </div>
             </div>
           </div>
