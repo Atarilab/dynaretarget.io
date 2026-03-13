@@ -101,6 +101,17 @@ function App() {
                         <span>Video</span>
                       </a>
                     </span>
+                    {/* Code base. */}
+                    <span className="link-block">
+                      <a
+                        href="https://github.com/Atarilab/sbto"
+                        className="external-link button is-normal is-rounded is-dark"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span>Repo</span>
+                      </a>
+                    </span>
                   </div>
                 </div>
               </div>
