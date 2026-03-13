@@ -2,13 +2,13 @@
 
 This is the repository that contains source code for the [DynaRetarget website](https://dynaretarget.github.io).
 
-If you find Nerfies useful for your work please cite:
+If you find DynaRetarget/SBTO useful for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@article{dhedin2025dynaretarget,
+  title     = {DynaRetarget: Dynamically-Feasible Retargeting using Sampling-Based Trajectory Optimization},
+  author    = {Dhedin, Victor and Taouil, Ilyass and Omar, Shafeef and Yu, Dian and Tao, Kun and Dai, Angela and Khadiv, Majid},
+  journal   = {arXiv preprint arXiv:2602.06827},
+  year      = {2025}
 }
 ```
 
